@@ -1,9 +1,10 @@
 #include <cango/utility/result_code.hpp>
 
-cango::utility::result_code func() {
+constexpr cango::utility::result_code func() noexcept {
 	return { 1 };
 }
 
 int main() {
-	return func().code;
-} 
+	constexpr cango::utility::result_code result = func();
+	return result.code;
+}
